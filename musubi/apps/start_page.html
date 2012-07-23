@@ -89,10 +89,10 @@ Musubi.ready(function(context) {
 
 $(function success(e) {
     	var text = "Pressed the nose!";
-    	var content = {"text" : text};
+    	var html = '<span>' + text + '</span>';
+    	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "post_user", json: content})
       	musu.appContext.feed.post(obj);
-      	musu.appContext.quit();
 	});
 });
 
