@@ -87,10 +87,9 @@ var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
 
-(function success(e) {
+$(function success(e) {
     	var text = "Pressed the nose!";
-    	var html = '<span>' + text + '</span>';
-    	var content = { "__html" : html, "text" : text};
+    	var content = {"text" : text};
       	var obj = new SocialKit.Obj({type : "post_user", json: content})
       	musu.appContext.feed.post(obj);
       	musu.appContext.quit();
