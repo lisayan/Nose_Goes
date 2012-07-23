@@ -1,10 +1,7 @@
-<?php
-	$noseColor = $_GET["noseColor"];
-?>
-
-
 <!DOCTYPE HTML>
 <html>
+
+<!-- <?php $noseColor = $_GET["noseColor"]; ?> -->
 	<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="text/javascript" src="http://mobisocial.stanford.edu/musubi/apps/SocialKit-JS/lib/socialKit-1.js"></script>
@@ -82,12 +79,28 @@ flash=setInterval("change()",speed)
 }
 starteffect()
 
+function MusuWriter(app) {
+  this.appContext = app;
+}
+
+var musu;
+Musubi.ready(function(context) {
+    musu = new MusuWriter(context);
+    
+    function postID() {
+    	var user = musubi.appContext.user();
+    	var content = {"user" : user};
+      	var obj = new SocialKit.Obj({type : "post_user", json: content})
+      	musu.appContext.feed.post(obj);
+
 </script>
 </font></b>
 </div>
 
-	<a href="http://lisayan.github.com/Nose_Goes/musubi/apps/start_time_table.html">
-		<img src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_" + '<?php echo $noseColor ?>' + "_start.png" id="nose"/ >
-	</a>
+	<!-- <a href="http://lisayan.github.com/Nose_Goes/musubi/apps/start_time_table.html"> -->
+	
+		<img src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589_start.png" id="nose"
+			onClick = postID(); />
+			<!-- '<?php echo $noseColor ?>' --> 
 </body>
 </html>
