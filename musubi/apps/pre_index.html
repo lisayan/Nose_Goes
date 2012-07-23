@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="http://mobisocial.stanford.edu/musubi/apps/SocialKit-JS/lib/socialKit-1.js"></script>
+		<script type="text/javascript" src="http://mobisocial.stanford.edu/musubi/apps/SocialKit-JS/jquery-1.5.2.min.js"></script>
+		<script src="http://lisayan.github.com/Nose-Goes/musubi/apps/app.js"></script> 
+		<title>Nose Goes</title>
+	<style type="text/css">
+		#logo {
+			position: absolute;
+			top:35px;
+			}
+		#text{
+			position: absolute;
+			top: 150px;
+			left: 30px;
+			}
+		#post_button {
+			position: absolute;
+			top:330px;
+			left:80px;
+			}
+		input,button {
+                line-height: 1em;
+                font-size: 1em;
+            }
+	</style>
+	</head>
+<body bgcolor = "orange">
+	<div id="logo">
+			<img src="http://lisayan.github.com/Nose-Goes/musubi/apps/images/logo2.png" alt="Title: Nose Goes" />
+	</div>
+	<div id = "text">
+		<form method="post" action="handler.php">
+		<br /><textarea id="text_area" name="comments" rows="8" cols="30">Customize your message</textarea>
+		</form>
+	</div>
+			<form>
+				<input type="button" value="Post your message" id="post_button"
+					onClick="window.location.href='http://lisayan.github.com/Nose-Goes/musubi/apps/index.html'">
+			</form>
+		<script> 
+    		$("#post_button").click(function(e) {
+    			alert("Your message has been posted to Musubi!");
+    		});
+		</script>
+</body>
+</html>
