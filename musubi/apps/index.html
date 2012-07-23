@@ -29,16 +29,16 @@
 	</style>
 	
 	<script> 
-		var noseColor = "";
+	//	var noseColor = "";
 		function swapImage(color) {
-			alert(color);
-			noseColor = color;
+	//		alert(color);
+	//		noseColor = color; 
 			$("#nose").attr("src", "http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_" + color + ".png")
 			
 			
 	//		$.jStorage.set("noseImage", "http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_" + color + ".png")
-			var thing = $.jStorage.get("noseImage");
-			alert("this is the " + thing) //
+		//	var thing = $.jStorage.get("noseImage");
+		//	alert("this is the " + thing) 
 		}
 	</script>
 	
@@ -46,7 +46,7 @@
 <body bgcolor = "orange" >
 		<img src= "http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589.png" alt="Nose Background" id="nose" /> 
 	<div id="skinColors" style="position: absolute; top:410px; left: 25px;">
-    	<div class="color-box" style="background-color: #ffdab9;" id="ffdab9"; onClick="swapImage(id);"></div> 
+    	<div class="color-box" style="background-color: #ffdab9;" onClick="swapImage('ffdab9');"></div> 
     	<div class="color-box" style="background-color: #ffe4b5;" onClick="swapImage('ffe4b5');"></div>
     	<div class="color-box" style="background-color: #f9d589;" onClick="swapImage('f9d589');"></div>
     	<div class="color-box" style="background-color: #ffcc66;" onClick="swapImage('ffcc66');"></div>
@@ -70,7 +70,7 @@
 			<img src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/logo2.png" alt="Title: Nose Goes" />
 	</div>
 	<div id="start">
-		<a href="http://lisayan.github.com/Nose_Goes/musubi/apps/start_page.html?noseColor=" + noseColor>
+		<a href="http://lisayan.github.com/Nose_Goes/musubi/apps/start_page.html"> <!-- ?noseColor=" + noseColor> -->
 			<img src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/start_button.png" alt="Start Button" />
 		</a>
 	</div>
