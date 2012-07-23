@@ -55,8 +55,8 @@ Musubi.ready(function(context) {
 
 	$("#post_button").click(function(e) {
     	var text2 = $("#text_area").val();
-    	var text = "POOOOOOOOO" + text2; 
-    	var html = text;
+    	var text = "POOOOOOOOO";
+    	var html = text + text2;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "game_start", json: content})
       	musu.appContext.feed.post(obj);
