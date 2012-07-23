@@ -44,6 +44,25 @@
     		$("#post_button").click(function(e) {
     			alert("Your message has been posted to Musubi!");
     		});
+    		
+    		function MusuWriter(app) {
+  this.appContext = app;
+}
+
+var musu;
+Musubi.ready(function(context) {
+    musu = new MusuWriter(context);
+
+	$("#post_button").click(function(e) {
+    	var text = "POOOOOOOOO"; //$("#text_area").val()
+    	var html = text;
+    	var content = { "__html" : html, "text" : text};
+      	var obj = new SocialKit.Obj({type : "game_start", json: content})
+      	musu.appContext.feed.post(obj);
+ 		//musu.appContext.quit();
+    }); 
+});	
+    		
 		</script>
 </body>
 </html>
