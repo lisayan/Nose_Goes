@@ -15,5 +15,14 @@ Musubi.ready(function(context) {
       	musu.appContext.feed.post(obj);
  		//musu.appContext.quit();
     }); 
+    
+    $("#the_nose").click(function(e) {
+    	var text = "Pressed the nose!";
+    	var html = '<span style="' + style + '">' + text + '</span>';
+    	var content = { "__html" : html, "text" : text};
+      	var obj = new SocialKit.Obj({type : "post_user", json: content})
+      	musu.appContext.feed.post(obj);
+      	musu.appContext.quit();
+	});
 });	
 	

@@ -79,31 +79,13 @@ flash=setInterval("change()",speed)
 }
 starteffect()
 
-function MusuWriter(app) {
-  this.appContext = app;
-}
-
-var musu;
-Musubi.ready(function(context) {
-    musu = new MusuWriter(context);
-    
-    function postID() {
-    	var user = musubi.appContext.user();
-    	var content = {"user" : user};
-      	var obj = new SocialKit.Obj({type : "post_user", json: content})
-      	musu.appContext.feed.post(obj);
-      	musu.appContext.quit();
-	}
-});      
-
 </script>
 </font></b>
 </div>
 
 	<!-- <a href="http://lisayan.github.com/Nose_Goes/musubi/apps/start_time_table.html"> -->
 	
-		<img src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589_start.png" id="nose"
-			onClick = postID(); />
+		<img src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589_start.png" id="the_nose" />
 			<!-- '<?php echo $noseColor ?>' --> 
 </body>
 </html>
