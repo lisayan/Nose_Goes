@@ -14,15 +14,5 @@ Musubi.ready(function(context) {
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "game_start", json: content})
       	musu.appContext.feed.post(obj);
-    }); 
-
-    $("#the_nose").click(function(e) {
-    	var text = "Pressed the nose!";
-    	var text2 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
-    	var html = text + text2;
-    	var content = { "__html" : html, "text" : text};
-      	var obj = new SocialKit.Obj({type : "post_user", json: content})
-      	musu.appContext.feed.post(obj);
-      	musu.appContext.quit();
-	});
+    });
 });	
