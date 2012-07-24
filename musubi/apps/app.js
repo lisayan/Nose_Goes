@@ -5,8 +5,6 @@ function MusuWriter(app) {
 var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
-    
-    //this code isn't working
 
 	$("#post_button").click(function(e) {
     	var text1 = "Started a Nose Goes. Here is the message - "
@@ -25,7 +23,6 @@ Musubi.ready(function(context) {
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "post_user", json: content})
       	musu.appContext.feed.post(obj);
-      	alert("testing");
       	musu.appContext.quit();
 	});
 });	
