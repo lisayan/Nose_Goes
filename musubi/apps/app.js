@@ -59,6 +59,6 @@ Musubi.ready(function(context) {
       	var obj = new SocialKit.Obj({type : "message_post", json: content})
       	musu.appContext.feed.post(obj);
     });
+    
+    $("#the_nose").click(function(e) {alert("testing this shit")});
 });	
-
-function test() { alert("test") }
