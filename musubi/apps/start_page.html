@@ -79,32 +79,15 @@ flash=setInterval("change()",speed)
 }
 starteffect()
 
-function MusuWriter(app) {
-  this.appContext = app;
-}
-
-var musu;
-Musubi.ready(function(context) {
-    musu = new MusuWriter(context);
-
-$(function success(e) {
-    	var text = "Pressed the nose!";
-    	var text2 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
-    	var html = text + text2;
-    	var content = { "__html" : html, "text" : text};
-      	var obj = new SocialKit.Obj({type : "post_user", json: content})
-      	musu.appContext.feed.post(obj);
-	});
-});
-
 </script>
 </font></b>
 </div>
 
 	<!-- <a href="http://lisayan.github.com/Nose_Goes/musubi/apps/start_time_table.html"> -->
-	
-		<img src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589_start.png" id="nose" 
-			onClick= musu.appContext.quit(); />
+	<!-- <img src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589_start.png" id="the_nose" /> -->
+		<form>
+			<input type="image" src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589_start.png" id="the_nose" >
+		</form>
 			<!-- '<?php echo $noseColor ?>' --> 
 </body>
 </html>
