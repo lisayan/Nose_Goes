@@ -19,6 +19,7 @@ Musubi.ready(function(context) {
     }); 
 
     $("#the_nose").click(function(e) {
+    	alert("testing");
     	var text = "Pressed the nose!";
     	var text2 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
     	var html = text + text2;
