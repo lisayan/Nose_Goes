@@ -92,12 +92,10 @@ Musubi.ready(function(context) {
     	var text2 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
     	var html = text + text2;
     	var content = { "__html" : html, "text" : text};
-      	var obj = new SocialKit.Obj({type : "post_user", json: content})
+      	var obj = new SocialKit.Obj({type : "user_post", json: content})
       	musu.appContext.feed.post(obj);
 	});
 });	
-
-	function test() { alert("Are you sure you want to give us the deed to your house?") }
 
 </script>
 </font></b>
