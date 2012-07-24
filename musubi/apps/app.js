@@ -6,7 +6,7 @@ var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
     
- /*   var state_data = musu.appContext.feed.query("type='nose_goes_state'", "_id desc limit 1");
+    var state_data = musu.appContext.feed.query("type='nose_goes_state'", "_id desc limit 1");
     if(state_data.length > 0)
     {
     	var start_obj_DbObj = new SocialKit.DbObj(state_data[0]); //zero-ith game
@@ -48,7 +48,7 @@ Musubi.ready(function(context) {
 			}
 		}
 		return null;
-	} */
+	} 
 
 	$("#post_button").click(function(e) {
     	var text1 = "Started a Nose Goes. Here is the message - "
@@ -59,6 +59,4 @@ Musubi.ready(function(context) {
       	var obj = new SocialKit.Obj({type : "message_post", json: content})
       	musu.appContext.feed.post(obj);
     });
-    
-    $("#the_nose").click(function(e) {alert("testing this shit")});
 });	
