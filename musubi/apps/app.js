@@ -2,6 +2,10 @@ function MusuWriter(app) {
   this.appContext = app;
 }
 
+function foo() {
+	alert("yo");
+}
+
 var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
@@ -65,3 +69,5 @@ Musubi.ready(function(context) {
       	musu.appContext.feed.post(obj); //post message for game start
 	});
 });	
+
+
