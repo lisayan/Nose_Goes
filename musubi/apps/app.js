@@ -6,6 +6,8 @@ var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
     
+	/*
+    
     var state_data = musu.appContext.feed.query("type='nose_goes_state'", "_id desc limit 1");
     
     if(state_data.length > 0)
@@ -50,9 +52,10 @@ Musubi.ready(function(context) {
 		}
 		return null;
 	} 
+	
+	*/
 
 	$("#post_button").click(function(e) {
-	
     	var text1 = "Started a Nose Goes. Here is the message - "
     	var text = $("#text_area").val();
     	var text2 = " - Hurry and join in if you don't want to lose!"
