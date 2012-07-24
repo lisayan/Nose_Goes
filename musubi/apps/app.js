@@ -60,13 +60,13 @@ Musubi.ready(function(context) {
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "nose_goes_state", json: content})
       	musu.appContext.feed.post(obj); //post message for game start
-      });
-      	/*
-      	var user_obj = makeUser(context); //person starting game
+	});
+ 
+    //  	var user_obj = makeUser(context); //person starting game
       	
-      	function func() {
-    		var data = musu.appContext.feed.query("type='nose_goes_state'", "_id desc limit 1")[0]; //getting game state
-		    var start_obj_DbObj = new SocialKit.DbObj(data); 
-		    start_obj_DbObj.post(user_obj); //adding starting player to game
-		} */
+   //   	function func() {
+    //		var data = musu.appContext.feed.query("type='nose_goes_state'", "_id desc limit 1")[0]; //getting game state
+		//    var start_obj_DbObj = new SocialKit.DbObj(data); 
+		 //   start_obj_DbObj.post(user_obj); //adding starting player to game
+	//	} 
 });	
