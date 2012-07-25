@@ -10,7 +10,7 @@ var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
     
-    alert("musubi is ready");
+    alert("hi bob");
     
     $("#start_button").click(function(e) {
     	alert("hello?");
