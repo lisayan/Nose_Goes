@@ -2,17 +2,11 @@ function MusuWriter(app) {
   this.appContext = app;
 }
 
-function foo() {
-	alert("yo");
-}
-
 var game_array = new Array();
 
 var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
-    
-    alert("hi bob");
     
     $("#start_button").click(function(e) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
@@ -40,7 +34,7 @@ Musubi.ready(function(context) {
 		var name = temp_player_obj.json['name']; //getting name	
       	
    		if (game_array.length == context.feed.members.length) {
-     		var text = name + " lost the Nose Goes!";
+     		var text = name + " lost the Nose Goes! Suckaaaaaa";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var obj = new SocialKit.Obj({type : "end_game", json: content})
