@@ -35,9 +35,12 @@ Musubi.ready(function(context) {
       	
       	var player_obj = makeUser(context);
      	game_array.push(player_obj);
+     	
+     	var temp_player_obj = new SocialKit.Obj(player_obj); //creating Obj of user
+		var name = temp_player_obj.json['name']; //getting name	
       	
    		if (game_array.length == context.feed.members.length) {
-     		var text = player_obj + " lost the Nose Goes!";
+     		var text = name + " lost the Nose Goes!";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var obj = new SocialKit.Obj({type : "end_game", json: content})
