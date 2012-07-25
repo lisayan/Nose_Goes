@@ -24,7 +24,7 @@ Musubi.ready(function(context) {
       	
       	var user_obj = makeUser(context);    //person starting game
       	
-      	alert("test");
+      	alert("test" + user_obj);
       	
 	});
     
@@ -38,13 +38,16 @@ Musubi.ready(function(context) {
       	var player_obj = makeUser(context);
      	game_array.push(player_obj);
       	
-      	if (game_array.length == musubi.appContext.feed.members()) {
-      		var text = musubi.appContext.user() + " lost the Nose Goes!";
+   /*   	if (game_array.length == musubi.appContext.feed.members()) {
+     		var text = musubi.appContext.user() + " lost the Nose Goes!";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var obj = new SocialKit.Obj({type : "end_game", json: content})
-      		musu.appContext.feed.post(obj); 
-      	} 
+      		musu.appContext.feed.post(obj);  
+      	} */
+      	
+      	var number = musubi.appContext.feed.members();
+      	alert("pressed" + number);
       	
       	musu.appContext.quit();
 	});
