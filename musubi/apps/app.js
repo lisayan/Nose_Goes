@@ -98,7 +98,7 @@ Musubi.ready(function(context) {
 	//makes user object
 	function makeUser(context)
 	{
-		var userID = context.user['id];
+		var userID = context.user['id'];
 		var user_json = {"id" : userID, "name" : context.user['name']};
 		user_obj = new SocialKit.Obj({type: "user", json: user_json});
 		return user_obj;
