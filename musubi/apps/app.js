@@ -38,7 +38,7 @@ Musubi.ready(function(context) {
       	var player_obj = makeUser(context);
      	game_array.push(player_obj);
       	
-   /*   	if (game_array.length == musubi.appContext.feed.members()) {
+   /*   	if (game_array.length == context.feed.members.length) {
      		var text = musubi.appContext.user() + " lost the Nose Goes!";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
@@ -46,7 +46,7 @@ Musubi.ready(function(context) {
       		musu.appContext.feed.post(obj);  
       	} */
       	
-      	var number = musubi.appContext.feed.members();
+      	var number = context.feed.members.length;
       	alert("pressed" + number);
       	
       	musu.appContext.quit();
