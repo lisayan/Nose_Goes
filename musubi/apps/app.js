@@ -6,13 +6,13 @@ function foo() {
 	alert("yo");
 }
 
+var game_array = new Array();
+
 var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
     
     alert("hi bob");
-    
-    var game_array = new Array();
     
     $("#start_button").click(function(e) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
@@ -23,12 +23,8 @@ Musubi.ready(function(context) {
       	musu.appContext.feed.post(obj); //post message for game start
       	
       	var user_obj = makeUser(context);    //person starting game
-		
-		function func() {
-    		var data = musu.appContext.feed.query("type='1'", "_id desc limit 1")[0]; //getting game state
-		    start_obj_DbObj = new SocialKit.DbObj(data); 
-		    start_obj_DbObj.post(user_obj);  //adding starting player to game
-		}
+      	
+      	alert("test");
       	
 	});
     
@@ -74,7 +70,7 @@ Musubi.ready(function(context) {
 	}); */
     
     
-    var state_data = musu.appContext.feed.query("type='1'", "_id desc limit 1");
+/*    var state_data = musu.appContext.feed.query("type='1'", "_id desc limit 1");
     
     if(state_data.length > 0)
     {
@@ -93,7 +89,7 @@ Musubi.ready(function(context) {
     	//	if(user_status == null){//show nose;}
     	//	else if (user_status != null){//show timetable;}
     	}
-    }
+    } */
     
 	//makes user object
 	function makeUser(context)
