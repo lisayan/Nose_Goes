@@ -37,7 +37,7 @@ Musubi.ready(function(context) {
      	game_array.push(player_obj);
       	
    		if (game_array.length == context.feed.members.length) {
-     		var text = musubi.appContext.user() + " lost the Nose Goes!";
+     		var text = player_obj + " lost the Nose Goes!";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var obj = new SocialKit.Obj({type : "end_game", json: content})
