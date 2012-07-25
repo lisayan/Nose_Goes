@@ -41,7 +41,7 @@ Musubi.ready(function(context) {
       		musu.appContext.feed.post(obj);  
       	} 
       	
-  //    	musu.appContext.quit();
+    	musu.appContext.quit();
 	});
 	
 /*	$("#post_button").click(function(e) {
