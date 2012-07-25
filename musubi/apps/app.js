@@ -9,7 +9,7 @@ function foo() {
 var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
-    
+    alert("musubi is ready");
     $("#the_nose").click(function(e) {
     	/*var text = "Pressed the nose!";
     	var text2 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
