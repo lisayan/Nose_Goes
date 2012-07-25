@@ -14,11 +14,12 @@ Musubi.ready(function(context) {
     
     $("#start_button").click(function(e) {
     	alert("hello?");
+    	/*
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
     	var html = text;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "1", json: content});
-      	musu.appContext.feed.post(obj); //post message for game start
+      	musu.appContext.feed.post(obj); //post message for game start */
 	});
     
     $("#the_nose").click(function(e) {
