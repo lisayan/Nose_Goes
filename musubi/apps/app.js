@@ -12,7 +12,7 @@ Musubi.ready(function(context) {
     
     alert("hi bob");
     
-//    var game_array = new Array();
+    var game_array = new Array();
     
     $("#start_button").click(function(e) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
@@ -40,15 +40,15 @@ Musubi.ready(function(context) {
       	musu.appContext.feed.post(obj);
       	
       	var player_obj = makeUser(context);
-//     	game_array.push(player_obj);
+     	game_array.push(player_obj);
       	
-/*      if (game_array.length == musubi.appContext.feed.members()) {
+      	if (game_array.length == musubi.appContext.feed.members()) {
       		var text = musubi.appContext.user() + " lost the Nose Goes!";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var obj = new SocialKit.Obj({type : "end_game", json: content})
       		musu.appContext.feed.post(obj); 
-      	} */
+      	} 
       	
       	musu.appContext.quit();
 	});
