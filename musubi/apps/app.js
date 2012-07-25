@@ -6,6 +6,8 @@ function foo() {
 	alert("yo");
 }
 
+var game_array = new Array();
+
 var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
@@ -21,11 +23,9 @@ Musubi.ready(function(context) {
       	musu.appContext.feed.post(obj); //post message for game start
       	
       	var user_obj = makeUser(context);    //person starting game
-		var game_array = new Array();
-		game_array.push(user_obj);
 		
 		function func() {
-    		var data = musu.appContext.feed.query("type='truth_dare_state'", "_id desc limit 1")[0]; //getting game state
+    		var data = musu.appContext.feed.query("type='1'", "_id desc limit 1")[0]; //getting game state
 		    start_obj_DbObj = new SocialKit.DbObj(data); 
 		    start_obj_DbObj.post(user_obj);  //adding starting player to game
 		}
@@ -42,7 +42,7 @@ Musubi.ready(function(context) {
       	var player_obj = makeUser(context);
       	game_array.push(player_obj);
       	
-      	if (game_array.length == musubi.appContext.feed.members() + 1) {
+      	if (game_array.length == musubi.appContext.feed.members()) {
       		var text = musubi.appContext.user() + " lost the Nose Goes!";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
