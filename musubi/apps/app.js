@@ -13,26 +13,34 @@ Musubi.ready(function(context) {
     alert("hi bob");
     
     $("#start_button").click(function(e) {
-    	alert("hello?");
-    	/*
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
     	var html = text;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "1", json: content});
-      	musu.appContext.feed.post(obj); //post message for game start */
+      	musu.appContext.feed.post(obj); //post message for game start
 	});
     
     $("#the_nose").click(function(e) {
-    	/*var text = "Pressed the nose!";
+    	var text = "Pressed the nose!";
     	var text2 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
     	var html = text + text2;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "user_post", json: content})
       	musu.appContext.feed.post(obj);
+      	musu.appContext.quit();
       	
-      	musu.appContext.quit();*/
       	alert("fuck you willem");
       	foo();
+	});
+	
+	$("#post_button").click(function(e) {
+    	var text1 = "Started a Nose Goes. Here is the message - ";
+    	var text = $("#text_area").val();
+    	var text2 = " - Hurry and join in if you don't want to lose!";
+    	var html = text1 + text + text2;
+    	var content = { "__html" : html, "text" : text};
+      	var obj = new SocialKit.Obj({type : "nose_goes_state", json: content});
+      	musu.appContext.feed.post(obj); //post message for game start
 	});
     
 	/*
@@ -83,16 +91,6 @@ Musubi.ready(function(context) {
 	} 
 	
 	*/
-
-	$("#post_button").click(function(e) {
-    	var text1 = "Started a Nose Goes. Here is the message - ";
-    	var text = $("#text_area").val();
-    	var text2 = " - Hurry and join in if you don't want to lose!";
-    	var html = text1 + text + text2;
-    	var content = { "__html" : html, "text" : text};
-      	var obj = new SocialKit.Obj({type : "nose_goes_state", json: content});
-      	musu.appContext.feed.post(obj); //post message for game start
-	});
 });	
 
 
