@@ -6,13 +6,13 @@ function foo() {
 	alert("yo");
 }
 
-var game_array = new Array();
-
 var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
     
     alert("hi bob");
+    
+    var game_array = new Array();
     
     $("#start_button").click(function(e) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
@@ -108,7 +108,7 @@ Musubi.ready(function(context) {
 	function getUser(context)
 	{
 		var data = context.feed.query("type='nose_goes_state'", "_id desc limit 1")[0];
-		var start_obj_DbObj = new SocialKit.DbObj(date);
+		var start_obj_DbObj = new SocialKit.DbObj(data);
 		var user_arr = start_obj_DbObj.query("type = 'user'");
 		for(i=0; i<user_arr.length; i++){
 			temp_user = new SocialKit.Obj(user_arr[i]);
