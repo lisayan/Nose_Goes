@@ -15,9 +15,14 @@ Musubi.ready(function(context) {
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
       	db_obj = new SocialKit.DbObj({type : "1", json: content});
-      	musu.appContext.feed.post(db_obj); //post message for game start
       	
-      	var user_obj = makeUser(context);    //person starting game
+      	var start = makeUser(context);    //person starting game
+      	var start_obj = new SocialKit.Obj(start); 
+      	db_obj.post(start_obj);
+      	musu.appContext.feed.post(start_obj); //post message for game start
+      	
+      	
+      	
       	
 	});
     
@@ -28,10 +33,12 @@ Musubi.ready(function(context) {
       	var obj = new SocialKit.Obj({type : "user_post", json: content})
       	musu.appContext.feed.post(obj);
       	
-      	var player_obj = makeUser(context);
-     	db_obj.post(player_obj);
+      	var player = makeUser(context);
      	
-     	var temp_player_obj = new SocialKit.Obj(player_obj); //creating Obj of user
+     	var temp_player_obj = new SocialKit.Obj(player); //creating Obj of user
+     	
+     	db_obj.post(temp_player_obj);
+     	
 		var name = temp_player_obj.json['name']; //getting name	
       	
    		if (db_obj.query.length == context.feed.members.length) {
@@ -44,7 +51,7 @@ Musubi.ready(function(context) {
       	
     	musu.appContext.quit();
 	});
-	
+
 /*	$("#post_button").click(function(e) {
     	var text1 = "Started a Nose Goes. Here is the message - ";
     	var text = $("#text_area").val();
@@ -95,7 +102,7 @@ Musubi.ready(function(context) {
 		user_obj = new SocialKit.Obj({type: "user", json: user_json});
 		return user_obj;
 	}
-	
+
 	//returns the user
 	function getUser(context)
 	{
@@ -111,7 +118,5 @@ Musubi.ready(function(context) {
 		}
 		return null;
 	} 
-	
-});	
 
-
+});
