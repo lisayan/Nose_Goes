@@ -17,7 +17,7 @@ Musubi.ready(function(context) {
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "game_session", json: content});
       	musu.appContext.feed.post(obj); //post message for game start
-      	alert(context.feed.members.length);
+      	musu.appContext.feed.post(start_obj);
       	}
 
     
@@ -44,7 +44,7 @@ Musubi.ready(function(context) {
      	
 		var name = player.json['name']; //getting name	
       	
-   		if (start_obj.query("type='user'").length == context.feed.members.length) {
+   		if (start_obj.query.length == context.feed.members.length) {
      		var text = name + " lost the Nose Goes! Suckaaaaaa";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
@@ -52,7 +52,9 @@ Musubi.ready(function(context) {
       		musu.appContext.feed.post(obj);  
       	} 
       	
-		musu.appContext.quit();
+      	//if not full then like keep filling it?
+      	
+    	musu.appContext.quit();
 	});
 
 /*	$("#post_button").click(function(e) {
