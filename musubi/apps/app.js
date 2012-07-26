@@ -29,7 +29,7 @@ Musubi.ready(function(context) {
      	var player_obj = new SocialKit.Obj(player); //creating Obj of user
      	
      	db_obj = new SocialKit.DbObj(player);
-     	
+     	alert(player.json);
 		var name = player.json['name']; //getting name	
       	
    		if (db_obj.query.length == context.feed.members.length) {
