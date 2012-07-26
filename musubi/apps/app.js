@@ -2,7 +2,6 @@ function MusuWriter(app) {
   this.appContext = app;
 }
 
-var game_array = new Array();
 var db_obj;
 
 var musu;
@@ -14,12 +13,8 @@ Musubi.ready(function(context) {
     	var text3 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
-      	db_obj = new SocialKit.DbObj({type : "1", json: content});
-      	musu.appContext.feed.post(db_obj); //post message for game start
-      	
-      	
-      	
-      	
+      	var obj = new SocialKit.Obj({type : "1", json: content});
+      	musu.appContext.feed.post(obj); //post message for game start
 	});
     
     $("#the_nose").click(function(e) {
@@ -33,7 +28,7 @@ Musubi.ready(function(context) {
      	
      	var player_obj = new SocialKit.Obj(player); //creating Obj of user
      	
-     	db_obj.post(player_obj);
+     	db_obj = new SocialKit.DbObj(player);
      	
 		var name = player_obj.json['name']; //getting name	
       	
