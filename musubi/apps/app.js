@@ -41,6 +41,8 @@ Musubi.ready(function(context) {
      	
      	start_obj.post(player);
      	
+     	alert(context.feed.members.length);
+     	
 		var name = player.json['name']; //getting name	
       	
    		if (start_obj.query.length == context.feed.members.length) {
