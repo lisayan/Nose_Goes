@@ -8,18 +8,19 @@ var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
     
-    start_obj = musu.appContext.obj;
+    var start_obj;
+    var temp = musu.appContext.feed.query("type='game_session'");
     
-    if (start_obj == null) {
+    if (temp.length == 0) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
     	var text3 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
-      	var obj = new SocialKit.Obj({type : "game_session", json: content});
+      	start_obj = new SocialKit.Obj({type : "game_session", json: content});
       	musu.appContext.feed.post(obj); //post message for game start
       	alert(context.feed.members.length);
       	}
-		
+	start_obj = new SocialKit.DbObj(temp[0]);	
     
 /*    $("#start_button").click(function(e) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
