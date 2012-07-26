@@ -9,9 +9,9 @@ Musubi.ready(function(context) {
     musu = new MusuWriter(context);
     
     var start_obj;
-    var temp = musu.appContext.feed.query("type='game_session'");
+   
     
-    if (temp.length == 0) {
+    if (musu.appContext.obj == null) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
     	var text3 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
     	var html = text + text3;
@@ -19,8 +19,8 @@ Musubi.ready(function(context) {
       	start_obj = new SocialKit.Obj({type : "game_session", json: content});
       	musu.appContext.feed.post(obj); //post message for game start
       	}
-      	
-	start_obj = new SocialKit.DbObj(temp[0]);	
+      else {
+      	start_obj = musu.appContext.obj;}
     
 /*    $("#start_button").click(function(e) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
