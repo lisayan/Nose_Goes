@@ -42,20 +42,16 @@ Musubi.ready(function(context) {
      	
      	start_obj.post(player);
      	
-     	
-     	
 		var name = player.json['name']; //getting name	
       	
-   		if (start_obj.query.length == context.feed.members.length) {
+   		if (start_obj.query("type='user'").length == context.feed.members.length) {
      		var text = name + " lost the Nose Goes! Suckaaaaaa";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var obj = new SocialKit.Obj({type : "end_game", json: content})
       		musu.appContext.feed.post(obj);  
       	} 
-      	else {
-      		musu.appContext.quit();
-		}
+      	
 		musu.appContext.quit();
 	});
 
