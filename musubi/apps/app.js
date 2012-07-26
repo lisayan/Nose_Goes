@@ -15,8 +15,9 @@ Musubi.ready(function(context) {
     	var text3 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
-      	var start_obj = new SocialKit.Obj({type : "game_session", json: content});
-      	musu.appContext.feed.post(start_obj); //post message for game start
+      	var obj = new SocialKit.Obj({type : "game_session", json: content});
+      	musu.appContext.feed.post(obj); //post message for game start
+      	musu.appContext.feed.post(start_obj);
       	}
 		
     
