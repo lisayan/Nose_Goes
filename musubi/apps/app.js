@@ -15,6 +15,7 @@ Musubi.ready(function(context) {
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "1", json: content});
       	musu.appContext.feed.post(obj); //post message for game start
+      	alert("Started a New Game!");
 	});
     
     $("#the_nose").click(function(e) {
@@ -29,7 +30,7 @@ Musubi.ready(function(context) {
      	alert("test1");
      	
      	var player_obj = new SocialKit.Obj(player); //creating Obj of user
-     	alert("test2");
+     	alert(player.json);
      	
      	db_obj = new SocialKit.DbObj(player.json);
      	
