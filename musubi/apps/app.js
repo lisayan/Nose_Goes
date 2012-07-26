@@ -17,6 +17,7 @@ Musubi.ready(function(context) {
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "game_session", json: content});
       	musu.appContext.feed.post(obj); //post message for game start
+      	alert(context.feed.members.length);
       	}
 		
     
@@ -41,7 +42,7 @@ Musubi.ready(function(context) {
      	
      	start_obj.post(player);
      	
-     	alert(context.feed.members.length);
+     	
      	
 		var name = player.json['name']; //getting name	
       	
