@@ -8,7 +8,7 @@ var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
     
-    var start_obj;
+    var start_Dbobj;
    
     
     if (musu.appContext.obj == null) {
@@ -17,10 +17,11 @@ Musubi.ready(function(context) {
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
       	start_obj = new SocialKit.Obj({type : "game_session", json: content});
+      	start_DbObj = new SocialKit.DbObj({type : "game_session", json: content});
       	musu.appContext.feed.post(start_obj); //post message for game start
       	}
       else {
-      	start_obj = musu.appContext.obj;
+      	start_DbObj = musu.appContext.obj;
       }
     
 /*    $("#start_button").click(function(e) {
@@ -42,13 +43,13 @@ Musubi.ready(function(context) {
       	
       	var player = makeUser(context);
      	
-     	start_obj.post(player);
+     	start_DbObj.post(player);
      	
-     	alert(start_obj.query("type='user'").length);
+     	alert(start_DbObj.query("type='user'").length);
      	
 		var name = player.json['name']; //getting name	
       	
-   		if (start_obj.query("type='user'").length == context.feed.members.length) {
+   		if (start_DbObj.query("type='user'").length == context.feed.members.length) {
      		var text = name + " lost the Nose Goes! Suckaaaaaa";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
