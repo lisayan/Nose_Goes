@@ -8,21 +8,18 @@ var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
     
-    var start_Dbobj;
-   
+    start_obj = musu.appContext.obj;
     
-    if (musu.appContext.obj == null) {
+    if (start_obj == null) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
     	var text3 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
-      	start_obj = new SocialKit.Obj({type : "game_session", json: content});
-      	start_DbObj = new SocialKit.DbObj({type : "game_session", json: content});
-      	musu.appContext.feed.post(start_obj); //post message for game start
+      	var obj = new SocialKit.Obj({type : "game_session", json: content});
+      	musu.appContext.feed.post(obj); //post message for game start
+      	alert(context.feed.members.length);
       	}
-      else {
-      	start_DbObj = musu.appContext.obj;
-      }
+
     
 /*    $("#start_button").click(function(e) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
@@ -43,13 +40,11 @@ Musubi.ready(function(context) {
       	
       	var player = makeUser(context);
      	
-     	start_DbObj.post(player);
-     	
-     	alert(start_DbObj.query("type='user'").length);
+     	start_obj.post(player);
      	
 		var name = player.json['name']; //getting name	
       	
-   		if (start_DbObj.query("type='user'").length == context.feed.members.length) {
+   		if (start_obj.query("type='user'").length == context.feed.members.length) {
      		var text = name + " lost the Nose Goes! Suckaaaaaa";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
