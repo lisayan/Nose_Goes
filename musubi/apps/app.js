@@ -17,7 +17,6 @@ Musubi.ready(function(context) {
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "game_session", json: content});
       	musu.appContext.feed.post(obj); //post message for game start
-      	musu.appContext.feed.post(start_obj);
       	}
 		
     
@@ -51,10 +50,10 @@ Musubi.ready(function(context) {
       		var obj = new SocialKit.Obj({type : "end_game", json: content})
       		musu.appContext.feed.post(obj);  
       	} 
-      	
-      	//if not full then like keep filling it?
-      	
-    	musu.appContext.quit();
+      	else {
+      		musu.appContext.quit();
+		}
+		musu.appContext.quit();
 	});
 
 /*	$("#post_button").click(function(e) {
