@@ -18,8 +18,8 @@ Musubi.ready(function(context) {
     	var content = { "__html" : html, "text" : text};
       	start_obj = new SocialKit.Obj({type : "game_session", json: content});
       	musu.appContext.feed.post(obj); //post message for game start
-      	alert(context.feed.members.length);
       	}
+      	
 	start_obj = new SocialKit.DbObj(temp[0]);	
     
 /*    $("#start_button").click(function(e) {
@@ -42,6 +42,8 @@ Musubi.ready(function(context) {
       	var player = makeUser(context);
      	
      	start_obj.post(player);
+     	
+     	alert(start_obj.query("type='user'").length);
      	
 		var name = player.json['name']; //getting name	
       	
