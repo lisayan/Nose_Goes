@@ -17,10 +17,11 @@ Musubi.ready(function(context) {
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
       	start_obj = new SocialKit.Obj({type : "game_session", json: content});
-      	musu.appContext.feed.post(obj); //post message for game start
+      	musu.appContext.feed.post(start_obj); //post message for game start
       	}
       else {
-      	start_obj = musu.appContext.obj;}
+      	start_obj = musu.appContext.obj;
+      }
     
 /*    $("#start_button").click(function(e) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
