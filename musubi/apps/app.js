@@ -15,11 +15,7 @@ Musubi.ready(function(context) {
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
       	db_obj = new SocialKit.DbObj({type : "1", json: content});
-      	
-      	var start = makeUser(context);    //person starting game
-      	var start_obj = new SocialKit.Obj(start); 
-      	db_obj.post(start_obj);
-      	musu.appContext.feed.post(start_obj); //post message for game start
+      	musu.appContext.feed.post(db_obj); //post message for game start
       	
       	
       	
@@ -35,11 +31,11 @@ Musubi.ready(function(context) {
       	
       	var player = makeUser(context);
      	
-     	var temp_player_obj = new SocialKit.Obj(player); //creating Obj of user
+     	var player_obj = new SocialKit.Obj(player); //creating Obj of user
      	
-     	db_obj.post(temp_player_obj);
+     	db_obj.post(player_obj);
      	
-		var name = temp_player_obj.json['name']; //getting name	
+		var name = player_obj.json['name']; //getting name	
       	
    		if (db_obj.query.length == context.feed.members.length) {
      		var text = name + " lost the Nose Goes! Suckaaaaaa";
@@ -48,6 +44,8 @@ Musubi.ready(function(context) {
       		var obj = new SocialKit.Obj({type : "end_game", json: content})
       		musu.appContext.feed.post(obj);  
       	} 
+      	
+      	//if not full then like keep filling it?
       	
     	musu.appContext.quit();
 	});
