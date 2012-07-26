@@ -19,7 +19,6 @@ Musubi.ready(function(context) {
     
     $("#the_nose").click(function(e) {
     	var text = "Pressed the nose!";
-    	alert(text);
     	var html = text;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "user_post", json: content})
@@ -27,8 +26,10 @@ Musubi.ready(function(context) {
       	
       	var player = makeUser(context);
      	
-     	var player_obj = new SocialKit.Obj(player); //creating Obj of user
+     	alert("test1");
      	
+     	var player_obj = new SocialKit.Obj(player); //creating Obj of user
+     	alert("test2");
      	db_obj = new SocialKit.DbObj(player);
      	alert(player.json);
 		var name = player.json['name']; //getting name	
