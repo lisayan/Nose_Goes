@@ -30,7 +30,7 @@ Musubi.ready(function(context) {
      	alert("test1");
      	
      	var player_obj = new SocialKit.Obj(player); //creating Obj of user
-     	alert(player.json);
+     	alert(JSON.stringify(player.json));
      	
      	db_obj = new SocialKit.DbObj(player.json);
      	
