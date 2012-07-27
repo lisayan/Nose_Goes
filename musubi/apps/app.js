@@ -15,13 +15,13 @@ Musubi.ready(function(context) {
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "game_session", json: content});
-      	alert(JSON.stringify(obj.type));
+      	
       	musu.appContext.feed.post(obj); //post message for game start
       	
       	setTimeout(func, 5000);
 			function func() {
 				alert("oh");
-    			var data = musu.appContext.feed.query("type='game_session'");
+    			var data = musu.appContext.feed.query("type='game_session'", "_id desc limit 1");
 				alert("shit");
 				start_obj = new SocialKit.DbObj(data);
 				alert(data);
