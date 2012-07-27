@@ -15,7 +15,7 @@ Musubi.ready(function(context) {
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "game_session", json: content});
-      	
+      	alert(JSON.stringify(obj.json));
       	musu.appContext.feed.post(obj); //post message for game start
       	
       	setTimeout(func, 5000);
