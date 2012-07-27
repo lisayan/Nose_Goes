@@ -49,11 +49,11 @@ Musubi.ready(function(context) {
       	var player = makeUser(context);
       	
      	start_obj.post(player);
-     	alert(start_obj);
+     	alert(start_obj.query("type='user'").length);
      	
 		var name = player.json['name']; //getting name	
       	
-   		if (start_obj.query.length == context.feed.members.length) {
+   		if (start_obj.query("type='user'").length == context.feed.members.length) {
      		var text = name + " lost the Nose Goes! Suckaaaaaa";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
