@@ -65,7 +65,7 @@ Musubi.ready(function(context) {
      	alert(start_obj.query("type='user'").length);
      	
 		var name = player.json['name']; //getting name	
-      	
+      	alert(context.feed.members.length);
    		if (start_obj.query("type='user'").length == context.feed.members.length) {
      		var text = name + " lost the Nose Goes! Suckaaaaaa";
     		var html = text;
