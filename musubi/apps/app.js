@@ -32,7 +32,7 @@ Musubi.ready(function(context) {
 				alert("what");
 		      	start_obj = new SocialKit.DbObj(data); 
 		      	alert("the");
-		      	start_obj.post(user_obj); //adding starting player to game
+		      	//start_obj.post(user_obj); //adding starting player to game
 		      	alert("fuck");
 			}
   	}
