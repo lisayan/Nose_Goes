@@ -18,8 +18,11 @@ Musubi.ready(function(context) {
       	
       	musu.appContext.feed.post(obj); //post message for game start
       	
-    	var data = musu.appContext.feed.query("type='game_session'");
-		start_obj = new SocialKit.DbObj(data);
+      	setTimeout(func, 1000);
+			function func() {
+    			var data = musu.appContext.feed.query("type='game_session'");
+				start_obj = new SocialKit.DbObj(data);
+			}
       	}
       	
       	//make the post/query from thing a DbObj
@@ -47,6 +50,7 @@ Musubi.ready(function(context) {
       	
      	start_obj.post(player);
      	alert(start_obj.query.length);
+     	
 		var name = player.json['name']; //getting name	
       	
    		if (start_obj.query.length == context.feed.members.length) {
