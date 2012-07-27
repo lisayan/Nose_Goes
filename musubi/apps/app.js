@@ -18,10 +18,11 @@ Musubi.ready(function(context) {
       	
       	musu.appContext.feed.post(obj); //post message for game start
       	
-      	setTimeout(func, 1000);
+      	setTimeout(func, 5000);
 			function func() {
     			var data = musu.appContext.feed.query("type='game_session'");
 				start_obj = new SocialKit.DbObj(data);
+				alert(data);
 			}
       	}
       	
@@ -43,7 +44,8 @@ Musubi.ready(function(context) {
     	var text = "Pressed the nose!";
     	var html = text;
     	var content = { "__html" : html, "text" : text};
-      	var obj = new SocialKit.Obj({type : "user_post", json: content})
+      	var obj = new SocialKit.Obj({type : "user_post", json: content});
+      	alert("ayo");
       	musu.appContext.feed.post(obj); //people shouldnt be able to click this later
       	
       	var player = makeUser(context);
