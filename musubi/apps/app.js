@@ -49,7 +49,7 @@ Musubi.ready(function(context) {
       	var player = makeUser(context);
       	
      	start_obj.post(player);
-     	alert(start_obj.query.length);
+     	alert(start_obj);
      	
 		var name = player.json['name']; //getting name	
       	
@@ -57,8 +57,8 @@ Musubi.ready(function(context) {
      		var text = name + " lost the Nose Goes! Suckaaaaaa";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
-      		var obj = new SocialKit.Obj({type : "end_game", json: content})
-      		musu.appContext.feed.post(obj);  
+      		var end_obj = new SocialKit.Obj({type : "end_game", json: content})
+      		musu.appContext.feed.post(end_obj);  
       	} 
       	
       	//if not full then like keep filling it?
