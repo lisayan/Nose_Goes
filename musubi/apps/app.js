@@ -67,11 +67,20 @@ Musubi.ready(function(context) {
 		var name = player.json['name']; //getting name	
       	alert(context.feed.members.length);
    		if (start_obj.query("type='user'").length == context.feed.members.length) {
+   			alert("we is ending the game");
      		var text = name + " lost the Nose Goes! Suckaaaaaa";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var end_obj = new SocialKit.Obj({type : "end_game", json: content})
       		musu.appContext.feed.post(end_obj);  
+      	} 
+   		else {
+   			alert("we is NOT ending the game");
+     		var text = "click this shit";
+    		var html = text;
+    		var content = { "__html" : html, "text" : text};
+      		var ongoing_obj = new SocialKit.Obj({type : "ongoing_game", json: content})
+      		musu.appContext.feed.post(ongoing_obj);  
       	} 
       	
       	//if not full then like keep filling it?
