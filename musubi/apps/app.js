@@ -23,6 +23,7 @@ Musubi.ready(function(context) {
 				alert("oh");
     			var data = musu.appContext.feed.query("type='game_session'", "_id desc limit 1");
 				alert("shit");
+				alert(data);
 				start_obj = new SocialKit.DbObj(data);
 				alert(data);
 			}
