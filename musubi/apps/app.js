@@ -15,8 +15,11 @@ Musubi.ready(function(context) {
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "game_session", json: content});
-      	start_obj = new SocialKit.DbObj({type : "game_session", json: content});
+      	
       	musu.appContext.feed.post(obj); //post message for game start
+      	
+    	var data = musu.appContext.feed.query("type='game_session'");
+		start_obj = new SocialKit.DbObj(data);
       	}
       	
       	//make the post/query from thing a DbObj
