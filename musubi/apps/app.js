@@ -28,11 +28,11 @@ Musubi.ready(function(context) {
 				//
 				//alert(data);
 				
-				//data = data[data.length - 1]; //getting game state
+				data = data[data.length - 1]; //getting game state
 				alert("what");
-		      	//start_obj = new SocialKit.DbObj(data); 
+		      	start_obj = new SocialKit.DbObj(data); 
 		      	alert("the");
-		      	//start_obj.post(user_obj); //adding starting player to game
+		      	start_obj.post(user_obj); //adding starting player to game
 		      	alert("fuck");
 			}
   	}
