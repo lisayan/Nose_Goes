@@ -20,7 +20,9 @@ Musubi.ready(function(context) {
       	
       	setTimeout(func, 5000);
 			function func() {
+				alert("oh");
     			var data = musu.appContext.feed.query("type='game_session'");
+				alert("shit");
 				start_obj = new SocialKit.DbObj(data);
 				alert(data);
 			}
