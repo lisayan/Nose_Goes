@@ -18,16 +18,24 @@ Musubi.ready(function(context) {
       	
       	musu.appContext.feed.post(obj); //post message for game start
       	
+      	var user_obj = makeUser(context);    //person starting game
+      	
       	setTimeout(func, 5000);
 			function func() {
 				alert("oh");
     			var data = musu.appContext.feed.query("type='game_session'", "_id desc limit 1");
 				alert("shit");
-				alert(data);
-				start_obj = new SocialKit.DbObj(data);
-				alert(data);
+				//
+				//alert(data);
+				
+				//data = data[data.length - 1]; //getting game state
+				alert("what");
+		      	start_obj = new SocialKit.DbObj(data); 
+		      	alert("the");
+		      	start_obj.post(user_obj); //adding starting player to game
+		      	alert("fuck");
 			}
-      	}
+  	}
       	
       	//make the post/query from thing a DbObj
       	//query for object you posted, post user object below that one
