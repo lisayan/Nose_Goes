@@ -2,8 +2,7 @@ function MusuWriter(app) {
   this.appContext = app;
 }
 
-var db_obj;
-
+var start_obj;
 var musu;
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
@@ -16,9 +15,12 @@ Musubi.ready(function(context) {
     	var html = text + text3;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "game_session", json: content});
+      	start_obj = new SocialKit.DbObj({type : "game_session", json: content});
       	musu.appContext.feed.post(obj); //post message for game start
-      	musu.appContext.feed.post(start_obj);
       	}
+      	
+      	//make the post/query from thing a DbObj
+      	//query for object you posted, post user object below that one
 
     
 /*    $("#start_button").click(function(e) {
@@ -39,9 +41,9 @@ Musubi.ready(function(context) {
       	musu.appContext.feed.post(obj); //people shouldnt be able to click this later
       	
       	var player = makeUser(context);
-     	
+      	
      	start_obj.post(player);
-     	
+     	alert(start_obj.query.length);
 		var name = player.json['name']; //getting name	
       	
    		if (start_obj.query.length == context.feed.members.length) {
