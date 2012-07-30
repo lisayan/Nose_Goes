@@ -20,27 +20,20 @@ Musubi.ready(function(context) {
       	
       	var user_obj = makeUser(context);    //person starting game
       	
+      	alert("Please wait 5 seconds...");
+      	
       	setTimeout(func, 5000);
 			function func() {
-				alert("oh");
     			var data = musu.appContext.feed.query("type='game_session'", "_id desc limit 1");
-				alert("shit");
-				//
 				//alert(data);
 				
 				data = data[data.length - 1]; //getting game state
-				alert("what");
 		      	start_obj = new SocialKit.DbObj(data); 
-		      	alert("the");
 		      	//start_obj.post(user_obj); //adding starting player to game
-		      	alert("fuck");
-			}
+		      	alert("All ready, now press it!");
+		}
   	}
       	
-      	//make the post/query from thing a DbObj
-      	//query for object you posted, post user object below that one
-
-    
 /*    $("#start_button").click(function(e) {
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
     	var text3 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
@@ -56,34 +49,31 @@ Musubi.ready(function(context) {
     	var html = text;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "user_post", json: content});
-      	alert("ayo");
       	musu.appContext.feed.post(obj); //people shouldnt be able to click this later
       	
       	var player = makeUser(context);
       	
      	start_obj.post(player);
-     	alert(start_obj.query("type='user'").length);
+     	alert(start_obj.query("type='user'").length + "people have clicked!");
      	
 		var name = player.json['name']; //getting name	
-      	alert(context.feed.members.length);
+      	//alert(context.feed.members.length);
    		if (start_obj.query("type='user'").length == context.feed.members.length) {
-   			alert("we is ending the game");
-     		var text = name + " lost the Nose Goes! Suckaaaaaa";
+   			alert("Pressed the nose! You lost!");
+     		var text = name + " lost the Nose Goes!;
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var end_obj = new SocialKit.Obj({type : "end_game", json: content})
       		musu.appContext.feed.post(end_obj);  
       	} 
    		else {
-   			alert("we is NOT ending the game");
-     		var text = "click this shit";
+   			alert("Pressed the nose! You're safe!");
+     		/*var text = "click this shit";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var ongoing_obj = new SocialKit.Obj({type : "ongoing_game", json: content})
-      		musu.appContext.feed.post(ongoing_obj);  
+      		musu.appContext.feed.post(ongoing_obj);  */
       	} 
-      	
-      	//if not full then like keep filling it?
       	
     	musu.appContext.quit();
 	});
