@@ -10,6 +10,8 @@ Musubi.ready(function(context) {
     start_obj = musu.appContext.obj;
     
     if (start_obj == null) {
+      	alert("Please wait 5 seconds...");
+      	
     	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
     	var text3 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
     	var html = text + text3;
@@ -20,7 +22,6 @@ Musubi.ready(function(context) {
       	
       	var user_obj = makeUser(context);    //person starting game
       	
-      	alert("Please wait 5 seconds...");
       	
       	setTimeout(func, 5000);
 			function func() {
