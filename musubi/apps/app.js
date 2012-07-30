@@ -54,7 +54,7 @@ Musubi.ready(function(context) {
       	var player = makeUser(context);
       	
      	start_obj.post(player);
-     	alert(start_obj.query("type='user'").length + "people have clicked!");
+     	alert(start_obj.query("type='user'").length + " people have clicked!");
      	
 		var name = player.json['name']; //getting name	
       	//alert(context.feed.members.length);
