@@ -60,7 +60,7 @@ Musubi.ready(function(context) {
       	//alert(context.feed.members.length);
    		if (start_obj.query("type='user'").length == context.feed.members.length) {
    			alert("Pressed the nose! You lost!");
-     		var text = name + " lost the Nose Goes!;
+     		var text = name + " lost the Nose Goes!";
     		var html = text;
     		var content = { "__html" : html, "text" : text};
       		var end_obj = new SocialKit.Obj({type : "end_game", json: content})
