@@ -4,23 +4,26 @@ function MusuWriter(app) {
 
 var start_obj;
 var musu;
+
 Musubi.ready(function(context) {
     musu = new MusuWriter(context);
-    
     start_obj = musu.appContext.obj;
     
     if (start_obj == null) {
-      	alert("Please wait 5 seconds...");
+		// Need a few seconds of initialization time,
+		// so prevent users from clicking the nose.
+		$("body").children().hide();
+		$("body").append("<div id='temp'>Please wait 5 seconds...</div>");
       	
-    	var text = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
-    	var text3 = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
-    	var html = text + text3;
-    	var content = { "__html" : html, "text" : text};
+    	var gameStartText = "Started a Nose Goes. Hurry and join in if you don't want to lose!";
+    	var gameIcon = "<img src='http://lisayan.github.com/Nose_Goes/musubi/apps/images/nose_goes_icon.png'>";
+    	var html = gameStartText + gameIcon;
+    	var content = { "__html" : html, "text" : gameStartText};
       	var obj = new SocialKit.Obj({type : "game_session", json: content});
       	
-      	musu.appContext.feed.post(obj); //post message for game start
+      	musu.appContext.feed.post(obj); // post message for game start
       	
-      	var user_obj = makeUser(context);    //person starting game
+      	var user_obj = makeUser(context); // get user object of person starting game
       
       	setTimeout(func, 5000);
 			function func() {
@@ -28,7 +31,10 @@ Musubi.ready(function(context) {
 
 				data = data[data.length - 1]; //getting game state
 		      	start_obj = new SocialKit.DbObj(data); 
-		      	alert("All ready, now press it!");
+				
+				// Initialization is over, so show the nose again
+				$("#temp").remove();
+		      	alert("Game is now ready, now press the Nose!");
 		}
   	}
       
@@ -37,14 +43,14 @@ Musubi.ready(function(context) {
     	var html = text;
     	var content = { "__html" : html, "text" : text};
       	var obj = new SocialKit.Obj({type : "user_post", json: content});
-      	musu.appContext.feed.post(obj); //people shouldnt be able to click this later
+      	musu.appContext.feed.post(obj);
       	
       	var player = makeUser(context);
       	
      	start_obj.post(player);
      	alert(start_obj.query("type='user'").length + " people have clicked!");
      	
-		var name = player.json['name']; //getting name	
+		var name = player.json['name']; //getting player name	
    		if (start_obj.query("type='user'").length == context.feed.members.length) {
    			alert("Pressed the nose! You lost!");
      		var text = name + " lost the Nose Goes!";
