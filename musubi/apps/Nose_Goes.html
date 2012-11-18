@@ -1,110 +1,53 @@
 <!DOCTYPE HTML>
 <html>
-
-<!-- <?php $noseColor = $_GET["noseColor"]; ?> -->
-	<head>
+<head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script type="text/javascript" src="http://mobisocial.stanford.edu/musubi/apps/SocialKit-JS/lib/socialKit-1.js"></script>
-		<script type="text/javascript" src="http://mobisocial.stanford.edu/musubi/apps/SocialKit-JS/jquery-1.5.2.min.js"></script>
-		<script type="text/javascript" src="http://lisayan.github.com/Nose_Goes/musubi/apps/app.js"></script>
-		<!--<script type="text/javascript" src="app.js"></script>-->
+	<script type="text/javascript" src="http://mobisocial.stanford.edu/musubi/apps/SocialKit-JS/lib/socialKit-1.js"></script>
+	<script type="text/javascript" src="http://mobisocial.stanford.edu/musubi/apps/SocialKit-JS/jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="http://jojo080889.github.com/Nose_Goes/musubi/apps/app.js"></script>
 		
-		<title>Start Page</title>
+	<title>Start Page</title>
 	<style type="text/css">
-	#pressme{
+		body {
+			background-color: orange;
+		}
+		
+		#pressme {
        		position: absolute;
        		top: 380px;
        		left: 40px;
-       		}
+       	}
+		#pressme #highlight {
+			font-size: 47px;
+			font-weight: bold;
+		}
 	</style>
-	</head>
-<body bgcolor="orange">
-<div id = "pressme">
-<b>
-<font size="30">
+</head>
+<body>
+	<div id="pressme">
+		<span id="highlight">PRESS ME!</span>
+		<div>Press the Nose to play Nose Goes!</div>
+	</div>
+	<img src="http://jojo080889.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589_start.png" id="the_nose">
 
-<script type="text/javascript">
+	<script type="text/javascript">
+		var speed = 200; // in milliseconds
+		var nextColor = 0; // keeps track of which color in the colorList array is being displayed
+		var colorList = ["red", "orange", "yellow", "green", "blue", "purple"];
 
-var text="PRESS ME!";   
-var speed=80;    
+		function changeColor(){
+			$("#highlight").css("color", colorList[nextColor]);
+			nextColor++;
+			if (nextColor >= colorList.length) {
+				nextColor = 0;
+			}
+		}
 
-if (document.all||document.getElementById){
-	document.write('<span id="highlight">' + text + '</span>')
-	var storetext=document.getElementById? document.getElementById("highlight") : document.all.highlight
-}
-else {
-	document.write(text);
-}
-var hex=new Array("00","14","28","3C","50","64","78","8C","A0","B4","C8","DC","F0");
-var r=1;
-var g=1;
-var b=1;
-var seq=1;
+		function startColorEffect() {
+			setInterval("changeColor()", speed)
+		}
 
-function changetext() {
-	rainbow="#"+hex[r]+hex[g]+hex[b]
-	storetext.style.color=rainbow
-}
-
-function change(){
-	if (seq==6) {
-		b--;
-		if (b==0)
-			seq=1
-	}
-	if (seq==5){
-		r++
-		if (r==12)
-			seq=6
-	}
-	if (seq==4){
-		g--
-		if (g==0)
-			seq=5
-	}
-	if (seq==3){
-		b++
-		if (b==12)
-			seq=4
-	}
-	if (seq==2){
-		r--
-		if (r==0)
-			seq=3
-	}
-	if (seq==1){
-		g++
-		if (g==12)
-			seq=2
-	}
-	changetext()
-}
-
-function starteffect(){
-	if (document.all||document.getElementById)
-		flash=setInterval("change()",speed)
-}
-
-starteffect()
-
-
-console.log("hi1!");
-
-
-
-console.log("h21!");
-
-</script>
-
-</font></b>
-</div>
-
-	<!-- <a href="http://lisayan.github.com/Nose_Goes/musubi/apps/start_time_table.html"> -->
-	<!-- <img src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589_start.png" id="the_nose" /> -->
-		<image src="http://lisayan.github.com/Nose_Goes/musubi/apps/images/colored/nose_f9d589_start.png" 
-				id="the_nose">
-			<!-- '<?php echo $noseColor ?>' --> 
-<!--	<center> <input type="button" value="Start a New Game" id="start_button"> </center>  -->
-	
+		startColorEffect();
+	</script>
 </body>
 </html>
